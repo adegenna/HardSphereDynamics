@@ -1,0 +1,7 @@
+inputfile            = ./billiards_position_t0.csv
+inputfileBoundary    = none
+outputfile           = xy
+dt                   = 0.001
+integrator           = euler
+tsteps               = 10000
+tsave                = 500

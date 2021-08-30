@@ -1,0 +1,1 @@
+../build/solver --config=input_billiards.txt
