@@ -60,6 +60,5 @@ target_link_libraries( solver
 target_link_libraries(testall
   ${GTEST_LIBRARIES}
   ${Boost_LIBRARIES}
-  /usr/lib/libgtest.a
   pthread
 )
