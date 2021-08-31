@@ -1,0 +1,28 @@
+name: unit testing (C++)
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+env:
+  BUILD_TYPE: Release
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Configure CMake
+      run: sudo apt-get install libgtest-dev libeigen3-dev && mkdir build && cd build && cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_VERBOSE_MAKEFILE:BOOL=ON ../
+            
+    - name: Build
+      run: cmake --build build --target all -j8
+      
+    - name: run tests
+      run: |
+        cd build
+        ctest -VV -R unittests
