@@ -62,3 +62,17 @@ target_link_libraries(testall
   ${Boost_LIBRARIES}
   pthread
 )
+
+
+enable_testing()
+
+set_target_properties( testall PROPERTIES
+  RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}"
+)
+
+add_test(
+  NAME
+  testall
+  COMMAND
+  testall
+)
